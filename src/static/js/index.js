@@ -7,7 +7,7 @@ var timer;
 
 async function setup() {
    // get newest task from priority queue and set it
-  get_next_task()
+  next_task()
 
   //set timer to work
   set_timer(1500);
@@ -26,17 +26,23 @@ async function setup() {
     set_timer_color('--nord10')
     set_timer(900);
   };
+
+  document.getElementById('add task').onclick = add_task
+  document.getElementById('next task').onclick = next_task
+
 }
 
 // get newest task from priority queue and set it
-async function get_next_task(){
+async function next_task(){
   response = await fetch('http://localhost:5000/next-task');
   set_current_task(await response.text());
 }
 
 // add task
 async function add_task(){
-  response = await fetch('http://localhost:5000/add-task');
+  task_input = document.getElementById('task_input');
+  response = await fetch('http://localhost:5000/add-task',{ task: task_input.value });
+  task_input.value = '';
   
 }
 

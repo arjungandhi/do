@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 CORS(app)
 
+tasks = []
 
 
 
@@ -20,5 +22,19 @@ def next_task():
 def add_task():
     if request.method == 'POST':
         data=request.form
+        print(data)
 
-        
+
+
+def load_tasks():
+    file= open('tasks.json','r')
+    global tasks
+    tasks = json.loads(file.read())
+    file.close()
+    return tasks
+
+def save_tasks():
+    file= open('tasks.json', 'w')
+    global tasks
+    file.write(json.dumps(tasks))
+    file.close()
