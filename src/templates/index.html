@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" />
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+
+
+  </head>
+  <body>
+    <div class="pretty small container">
+      <h4>do things</h4>
+      <hr />
+      <div class="pretty small center container">
+        <h2>
+          You are doing:
+          <text id="current task" class="pretty red text"> current task </text>
+        </h2>
+
+        
+
+        <div id="timer background" class="timer background">
+          <button id="work" class="pretty animated transparent button">
+            Work
+          </button>
+          <button id="short" class="pretty animated transparent button">
+            Short Break
+          </button>
+          <button id="long" class="pretty animated transparent button">
+            Long Break
+          </button>
+          <div id='timer text' class="timer text">25:00</div>
+          <button id="timer button" class="pretty big animated light button">
+            Start
+          </button>
+        </div>
+      </div>
+        <h4>Tasks</h4>
+        <hr>
+        <div class="pretty small center container">
+        <input id = "new-task" class="pretty input" type="text" name="task" placeholder="task...">
+        <button id="add" class=" pretty small red animated button">Add</button>
+
+        <br/>
+        <div class='btn-bar'>
+        <button id="other" class="pretty small animated dark button">
+          Other
+        </button>
+        <button id="next" class="pretty small animated blue button">
+          Next
+        </button>
+        <button id="done" class="pretty small animated green button">
+          Done?
+        </button>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+@import "pretty-please.css";
+
+:root {
+    --work: var(--nord11);
+    --small-break: var(--nord3);
+    --long-break: var(--nord8);
+}
+
+
+.timer.background {
+    background-color: var(--work);
+    width: 480px;
+    border-radius: .5em;
+    padding: 1em;
+    margin: 1em;
+}
+
+.timer.text {
+    font-size: 120px;
+    font-weight: bold;
+    margin-top: .2em;
+    margin-bottom: .3em;
+}
+
+.transparent { 
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.btn-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width:50%;
+}
+
+
+#new-task {
+    margin-right: 1em;
+    margin-bottom: 1em;
+    width: 80%;
+}
