@@ -10,21 +10,34 @@ async function setup() {
   next_task()
 
   //set timer to work
-  set_timer(1500);
+  set_timer(25);
   assign_start();
 
   //setting different timer modes
   document.getElementById("work").onclick = () => {
     set_timer_color('--nord11')
-    set_timer(1500);
+    set_timer(25);
   };
   document.getElementById("short").onclick = () => {
     set_timer_color('--nord2')
-    set_timer(300);
+    set_timer(5);
   };
   document.getElementById("long").onclick = () => {
     set_timer_color('--nord10')
-    set_timer(900);
+    set_timer(15);
+  };
+
+  document.getElementById("time_input").onchange = () => {
+    time = document.getElementById("time_input").value
+    if (time.includes(':')) {
+      time_parts = time.split(':')
+      time = parseInt(time_parts[0]) * 60 + parseInt(time_parts[1])
+    }
+    else {
+      parseInt(time)
+    }
+
+    set_timer(time)
   };
 
   document.getElementById('add task').onclick = add_task
@@ -90,7 +103,8 @@ function count_down() {
 
 function set_timer(time) {
   stop_time();
-  window.current_time = time;
+
+  window.current_time = time * 60;
   update_time();
 }
 
