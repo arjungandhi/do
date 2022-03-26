@@ -8,7 +8,9 @@
       rel="stylesheet"
       href="{{ url_for('static',filename='css/main.css') }}"
     />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
     <div class="pretty small container">
@@ -17,7 +19,7 @@
       <div class="pretty small center container">
         <h2>
           You are doing:
-          <text id="current task" class="pretty red text"> current task </text>
+          <text id="current task" class="pretty red text"> something </text>
         </h2>
 
         <div id="timer background" class="timer background">
@@ -34,41 +36,14 @@
           <button id="timer button" class="pretty big animated light button">
             Start
           </button>
-          <br>
+          <br />
           <input
             id="time_input"
             class="pretty input"
             type="text"
             name="timer"
-            placeholder="Custom Time" 
+            placeholder="Custom Time"
           />
-        </div>
-      </div>
-      <h4>Tasks</h4>
-      <hr />
-      <div class="pretty small center container">
-        <input
-          id="task_input"
-          class="pretty input"
-          type="text"
-          name="task"
-          placeholder="task..."
-        />
-        <button id="add task" class="pretty small red animated button">
-          Add
-        </button>
-
-        <br />
-        <div class="btn-bar">
-          <button id="other task" class="pretty small animated dark button">
-            Other
-          </button>
-          <button id="next task" class="pretty small animated blue button">
-            Next
-          </button>
-          <button id="done task" class="pretty small animated green button">
-            Done?
-          </button>
         </div>
       </div>
     </div>

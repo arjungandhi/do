@@ -40,22 +40,25 @@ async function setup() {
     set_timer(time)
   };
 
-  document.getElementById('add task').onclick = add_task
-  document.getElementById('next task').onclick = next_task
-
 }
 
 // get newest task from priority queue and set it
 async function next_task(){
-  response = await fetch('http://localhost:5000/next-task');
-  set_current_task(await response.text());
+  response = await fetch('/next-task');
+  if (response.status == 200) {
+    set_current_task(await response.text());
+  }
 }
 
 // add task
 async function add_task(){
   task_input = document.getElementById('task_input');
-  response = await fetch('http://localhost:5000/add-task',{ task: task_input.value });
+  set_current_task(task_input.value);
+  console.log(task_input.value);
+  response = await fetch('/add-task',{ task: task_input.value });
+  if (response.status == 200) {
   task_input.value = '';
+  }
   
 }
 
